@@ -22,7 +22,9 @@ defmodule TowerTelegram.MixProject do
   defp deps do
     [
       {:tower, "~> 0.6.0"},
-      {:telegex, "~> 1.8.0"}
+      {:telegex, "~> 1.8.0"},
+      {:finch, "~> 0.19.0", optional: true},
+      {:httpoison, "~> 2.2", optional: true}
     ]
   end
 end
