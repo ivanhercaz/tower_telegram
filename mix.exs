@@ -15,7 +15,6 @@ defmodule TowerTelegram.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {TowerTelegram.Application, []}
     ]
   end
 
