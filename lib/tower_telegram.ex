@@ -10,5 +10,5 @@ defmodule TowerTelegram do
   @behaviour Tower.Reporter
 
   @impl true
-  def report_event(event), do: TowerTelegram.report_event(event)
+  def report_event(event), do: TowerTelegram.Reporter.report_event(event)
 end
