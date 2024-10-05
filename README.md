@@ -1,6 +1,6 @@
 # TowerTelegram
 
-Error tracking and reporting to a Telegram chat (group or channel).
+Error tracking and reporting to a Telegram chat (group or channel) using [Tower][tower].
 
 It is a work-in-progress heavily inspired in the already existing
 [`TowerEmail`][tower_email] structure,
@@ -41,7 +41,7 @@ config :tower_telegram, chat_id: <chat_id>
 ```
 
 TODO: add a helper to get the chat id (a simple wrapper around get_updates)
-
+[tower]: https://github.com/mimiquate/tower
 Finally, you must register the reporter in `tower` reporters list:
 
 ```elixir
@@ -50,4 +50,5 @@ config :tower, :reporters, [TowerTelegram]
 
 [telegex]: https://github.com/telegex/telegex
 [telegex-config]: https://github.com/telegex/telegex#configuration
+[tower]: https://github.com/mimiquate/tower
 [tower_email]: https://github.com/mimiquate/tower_email
