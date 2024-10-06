@@ -29,7 +29,7 @@ defmodule TowerTelegram.MixProject do
       {:telegex, "~> 1.8.0"},
       {:finch, "~> 0.19.0", optional: true},
       {:httpoison, "~> 2.2", optional: true},
-      {:ex_doc, "~> 0.31", only: :dev, runtime: false},
+      {:ex_doc, "~> 0.31", only: :dev, runtime: false}
     ]
   end
 
