@@ -7,6 +7,7 @@ defmodule TowerTelegram.MixProject do
       version: "0.1.0",
       elixir: "~> 1.17",
       start_permanent: Mix.env() == :prod,
+      package: package(),
       deps: deps(),
       name: "TowerTelegram",
       source_url: "https://github.com/ivanhercaz/tower_telegram",
@@ -36,6 +37,18 @@ defmodule TowerTelegram.MixProject do
     [
       main: "TowerTelegram",
       extras: ["README.md"]
+    ]
+  end
+
+  defp package do
+    [
+      description: "Error tracking and reporting to a Telegram chat (group or channel) using Tower.",
+      files: ~w(lib LICENSE mix.exs README.md),
+      licenses: ["Apache-2.0"],
+      links: %{
+        "GitHub" => "https://github.com/ivanhercaz/tower_telegram",
+        "Tower package" => "https://hex.pm/packages/tower",
+      }
     ]
   end
 end
