@@ -3,14 +3,14 @@
 Error tracking and reporting to a Telegram chat (group or channel) using [Tower][tower].
 
 It is a work-in-progress heavily inspired in the already existing
-[`TowerEmail`][tower_email] structure,
+\[`TowerEmail`]\[tower\_email] structure,
 but using Telegram and [`telegex` Telegram bot framework][telegex]
 
 ## Requirements
 
-In order to use this reporter you must have a Telegram bot and provide
-your bot token and the chat ID (group or channel) in which you need to
-receive the reports.
+In order to use this reporter you must have a Telegram bot and provide your bot token and the chat ID (group or channel) in which you need to receive the reports.
+
+If you don't have or you don't know how to create a Telegram bot, first check [*How Do I Create a Bot*](https://core.telegram.org/bots#how-do-i-create-a-bot) Telegram's page.
 
 ## Configuration
 
@@ -40,15 +40,37 @@ You must also add the `chat_id` in which you want to receive the reports:
 config :tower_telegram, chat_id: <chat_id>
 ```
 
-TODO: add a helper to get the chat id (a simple wrapper around get_updates)
-[tower]: https://github.com/mimiquate/tower
 Finally, you must register the reporter in `tower` reporters list:
 
 ```elixir
 config :tower, :reporters, [TowerTelegram]
 ```
 
+### Note
+
+If you are interested in use TowerTelegram but with another Telegram packages, please, first read [this issue][tower-telegram-packages] and then feel free to open a new one requesting! Or even a pull request implementing the one you desire.
+
+## Usage
+
+Once you already have the reporter, it will listen the errors
+of your application as it is explained in [`Tower` documentation][tower-docs].
+
+It is also possible to manually fire the reporter, check *Manual
+Handling* section of Tower's documentation.
+
+## Test your bot reporter
+
+Once you have `TowerTelegram` configured, you can open `iex` and
+test it using `Tower.test/0`.
+
 [telegex]: https://github.com/telegex/telegex
+
 [telegex-config]: https://github.com/telegex/telegex#configuration
+
 [tower]: https://github.com/mimiquate/tower
-[tower_email]: https://github.com/mimiquate/tower_email
+
+[tower-docs]: https://hexdocs.pm/tower
+
+[tower-email]: https://github.com/mimiquate/tower_email
+
+[tower-telegram-packages]: https://github.com/ivanhercaz/tower_telegram/issues/2
