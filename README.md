@@ -4,7 +4,7 @@ Error tracking and reporting to a Telegram chat (group or channel) using [Tower]
 
 It is a work-in-progress heavily inspired in the already existing
 \[`TowerEmail`]\[tower\_email] structure,
-but using Telegram and [`telegex` Telegram bot framework][telegex]
+but using Telegram and [`telegex`][telegex].
 
 ## Requirements
 
