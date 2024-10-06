@@ -42,12 +42,13 @@ defmodule TowerTelegram.MixProject do
 
   defp package do
     [
-      description: "Error tracking and reporting to a Telegram chat (group or channel) using Tower.",
-      files: ~w(lib LICENSE mix.exs README.md),
+      description:
+        "Error tracking and reporting to a Telegram chat (group or channel) using Tower.",
+      files: ~w(lib LICENSE mix.exs README.md CHANGELOG.md),
       licenses: ["Apache-2.0"],
       links: %{
         "GitHub" => "https://github.com/ivanhercaz/tower_telegram",
-        "Tower package" => "https://hex.pm/packages/tower",
+        "Tower package" => "https://hex.pm/packages/tower"
       }
     ]
   end
