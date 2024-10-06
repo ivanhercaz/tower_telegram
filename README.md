@@ -1,10 +1,11 @@
 # TowerTelegram
 
+![Hex.pm Version](https://img.shields.io/hexpm/v/tower_telegram)
+
+
 Error tracking and reporting to a Telegram chat (group or channel) using [Tower][tower].
 
-It is a work-in-progress heavily inspired in the already existing
-\[`TowerEmail`]\[tower\_email] structure,
-but using Telegram and [`telegex`][telegex].
+It is a work-in-progress heavily inspired in the already existing [`TowerEmail`][tower-email] structure, but using Telegram and [`telegex`][telegex].
 
 ## Requirements
 
