@@ -8,12 +8,13 @@ defmodule TowerTelegram.Reporter do
       do: do_report_event(event)
   end
 
-  def do_report_event(%Tower.Event{} = e) do
+  def do_report_event(%Tower.Event{} = event) do
     Telegex.send_message(
       chat_id(),
-      build_message(e),
+      build_message(event),
       parse_mode: "markdown"
     )
+
     :ok
   end
 
@@ -22,8 +23,10 @@ defmodule TowerTelegram.Reporter do
          reason: exception,
          stacktrace: stacktrace
        }) do
+    {module, function} = from(stacktrace)
+
     """
-    Tower received an error of kind `#{kind}`.
+    Tower received an error of kind `#{kind}` from the function `#{function}` of the module `#{module}`.
 
     *Reason*:
     ```elixir
@@ -36,6 +39,18 @@ defmodule TowerTelegram.Reporter do
     #{include_hashtags(kind)}
     """
   end
+
+  defp from([head | _]), do: from(head)
+
+  defp from({module, function, parameters, _}),
+    do: {format_module(module), format_function(function, parameters)}
+
+  defp format_module(module), do: Atom.to_string(module)
+
+  defp format_function(function, 0), do: Atom.to_string(function) <> "/0"
+
+  defp format_function(function, parameters) when is_list(parameters),
+    do: Atom.to_string(function) <> "/" <> Integer.to_string(Enum.count(parameters))
 
   defp include_hashtags(kind), do: "#tower\\_report #tower\\_type\\_#{kind}"
 
