@@ -4,11 +4,8 @@ defmodule TowerTelegram.Reporter do
   @default_level :error
 
   def report_event(%Tower.Event{level: level} = event) do
-    if Tower.equal_or_greater_level?(level, level()) do
-      do_report_event(event)
-    end
-
-    :ok
+    if Tower.equal_or_greater_level?(level, level()),
+      do: do_report_event(event)
   end
 
   def do_report_event(%Tower.Event{} = e) do
@@ -17,7 +14,6 @@ defmodule TowerTelegram.Reporter do
       build_message(e),
       parse_mode: "markdown"
     )
-
     :ok
   end
 
