@@ -1,7 +1,7 @@
 defmodule TowerTelegram.Reporter do
   @moduledoc false
 
-  @default_level :info
+  @default_level :error
 
   def report_event(%Tower.Event{level: level} = event) do
     if Tower.equal_or_greater_level?(level, level()) do
