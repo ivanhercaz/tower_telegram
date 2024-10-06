@@ -1,6 +1,6 @@
 # TowerTelegram
 
-![Hex.pm Version](https://img.shields.io/hexpm/v/tower_telegram) [![Documentation](https://img.shields.io/badge/-Documentation-blueviolet)](https://hexdocs.pm/nx) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/ivanhercaz/tower_telegram/ci.yml)
+![Hex.pm Version](https://img.shields.io/hexpm/v/tower_telegram) [![Documentation](https://img.shields.io/badge/-Documentation-blueviolet)](https://hexdocs.pm/nx) [![CI](https://github.com/ivanhercaz/tower_telegram/actions/workflows/ci.yml/badge.svg)](https://github.com/ivanhercaz/tower_telegram/actions/workflows/ci.yml)
 
 Error tracking and reporting to a Telegram chat (group or channel) using [Tower][tower].
 
